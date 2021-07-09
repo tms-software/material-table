@@ -1,5 +1,5 @@
 import { Grid, MuiThemeProvider, Button } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import MaterialTable from "../src";
@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 
 let direction = "ltr";
 // direction = 'rtl';
-const theme = createMuiTheme({
+const theme = createTheme({
   direction: direction,
   palette: {
     type: "light",
