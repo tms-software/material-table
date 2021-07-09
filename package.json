@@ -1,6 +1,6 @@
 {
   "name": "@tms-software/material-table",
-  "version": "1.69.3-tms3",
+  "version": "1.69.3-tms4",
   "description": "Datatable for React based on https://material-ui.com/api/table/ with additional features",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
