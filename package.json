@@ -1,6 +1,6 @@
 {
-  "name": "material-table",
-  "version": "1.69.3",
+  "name": "@tms-software/material-table",
+  "version": "1.69.3-tms1",
   "description": "Datatable for React based on https://material-ui.com/api/table/ with additional features",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mbrn/material-table.git"
+    "url": "git+https://github.com/tms-software/material-table.git"
   },
   "keywords": [
     "react",
@@ -36,7 +36,7 @@
     "datatable",
     "table"
   ],
-  "author": "Mehmet Baran",
+  "author": "Froked from Mehmet Baran by TMS Software",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mbrn/material-table/issues"
