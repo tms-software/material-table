@@ -1,6 +1,6 @@
 {
   "name": "@tms-software/material-table",
-  "version": "1.69.3-tms5",
+  "version": "1.69.3-tms6",
   "description": "Datatable for React based on https://material-ui.com/api/table/ with additional features",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -55,7 +55,7 @@
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
     "buble": "^0.19.3",
-    "eslint": "^5.7.0",
+    "eslint": "^8.6.0",
     "eslint-config-defaults": "^9.0.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -71,8 +71,8 @@
     "react-hot-loader": "^4.3.12",
     "typescript": "^3.2.2",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
     "@date-io/date-fns": "^1.1.0",
@@ -82,8 +82,6 @@
     "debounce": "^1.2.0",
     "fast-deep-equal": "^2.0.1",
     "filefy": "^0.1.10",
-    "jspdf": "^2.3.1",
-    "jspdf-autotable": "^3.5.9",
     "prop-types": "^15.6.2",
     "react-beautiful-dnd": "^13.0.0",
     "react-double-scrollbar": "^0.0.15"

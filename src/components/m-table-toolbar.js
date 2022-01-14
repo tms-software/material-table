@@ -14,9 +14,7 @@ import { lighten } from "@material-ui/core/styles/colorManipulator";
 import classNames from "classnames";
 import { CsvBuilder } from "filefy";
 import PropTypes, { oneOf } from "prop-types";
-import "jspdf-autotable";
 import * as React from "react";
-const jsPDF = typeof window !== "undefined" ? require("jspdf").jsPDF : null;
 /* eslint-enable no-unused-vars */
 
 export class MTableToolbar extends React.Component {
@@ -74,44 +72,11 @@ export class MTableToolbar extends React.Component {
       .exportFile();
   };
 
-  defaultExportPdf = () => {
-    if (jsPDF !== null) {
-      const [columns, data] = this.getTableData();
-
-      let content = {
-        startY: 50,
-        head: [columns.map((columnDef) => columnDef.title)],
-        body: data,
-      };
-
-      const unit = "pt";
-      const size = "A4";
-      const orientation = "landscape";
-
-      const doc = new jsPDF(orientation, unit, size);
-      doc.setFontSize(15);
-      doc.text(this.props.exportFileName || this.props.title, 40, 40);
-      doc.autoTable(content);
-      doc.save(
-        (this.props.exportFileName || this.props.title || "data") + ".pdf"
-      );
-    }
-  };
-
   exportCsv = () => {
     if (this.props.exportCsv) {
       this.props.exportCsv(this.props.columns, this.props.data);
     } else {
       this.defaultExportCsv();
-    }
-    this.setState({ exportButtonAnchorEl: null });
-  };
-
-  exportPdf = () => {
-    if (this.props.exportPdf) {
-      this.props.exportPdf(this.props.columns, this.props.data);
-    } else {
-      this.defaultExportPdf();
     }
     this.setState({ exportButtonAnchorEl: null });
   };
@@ -262,12 +227,6 @@ export class MTableToolbar extends React.Component {
                   {localization.exportCSVName}
                 </MenuItem>
               )}
-              {(this.props.exportButton === true ||
-                this.props.exportButton.pdf) && (
-                <MenuItem key="export-pdf" onClick={this.exportPdf}>
-                  {localization.exportPDFName}
-                </MenuItem>
-              )}
             </Menu>
           </span>
         )}
@@ -384,7 +343,6 @@ MTableToolbar.defaultProps = {
     exportTitle: "Export",
     exportAriaLabel: "Export",
     exportCSVName: "Export as CSV",
-    exportPDFName: "Export as PDF",
     searchTooltip: "Search",
     searchPlaceholder: "Search",
     searchAriaLabel: "Search",
@@ -427,12 +385,11 @@ MTableToolbar.propTypes = {
   exportAllData: PropTypes.bool,
   exportButton: PropTypes.oneOfType([
     PropTypes.bool,
-    PropTypes.shape({ csv: PropTypes.bool, pdf: PropTypes.bool }),
+    PropTypes.shape({ csv: PropTypes.bool }),
   ]),
   exportDelimiter: PropTypes.string,
   exportFileName: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   exportCsv: PropTypes.func,
-  exportPdf: PropTypes.func,
   classes: PropTypes.object,
   searchAutoFocus: PropTypes.bool,
 };

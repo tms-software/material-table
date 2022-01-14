@@ -310,7 +310,7 @@ export const propTypes = {
     exportAllData: PropTypes.bool,
     exportButton: PropTypes.oneOfType([
       PropTypes.bool,
-      PropTypes.shape({ csv: PropTypes.bool, pdf: PropTypes.bool }),
+      PropTypes.shape({ csv: PropTypes.bool }),
     ]),
     exportDelimiter: PropTypes.string,
     exportFileName: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
