@@ -306,7 +306,7 @@ export interface Options<RowData extends object> {
   draggable?: boolean;
   emptyRowsWhenPaging?: boolean;
   exportAllData?: boolean;
-  exportButton?: boolean | { csv?: boolean; pdf?: boolean };
+  exportButton?: boolean | { csv?: boolean };
   exportDelimiter?: string;
   exportFileName?:
     | string
@@ -405,7 +405,6 @@ export interface Localization {
     exportTitle?: React.ReactNode;
     exportAriaLabel?: string;
     exportCSVName?: React.ReactNode;
-    exportPDFName?: React.ReactNode;
     searchTooltip?: React.ReactNode;
     searchPlaceholder?: React.ReactNode;
     searchAriaLabel?: string;
